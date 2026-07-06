@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Die besten Parks in Köln | KölnGuide</title>
+  <meta name="description" content="Kölns schönste Parks: Rheinpark, Volksgarten, Stadtgarten, Grüngürtel, Flora, Decksteiner Weiher und mehr – mit Infos zu Picknick, Spaziergang, Sport und Wassernähe.">
+  <link rel="preconnect" href="https://commons.wikimedia.org">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="page-hero__bg"><img data-file="Cologne rheinpark 20060521.jpg" alt="Rheinpark in Köln"></div>
+    <div class="container page-hero__inner">
+      <div class="breadcrumb"><a href="index.html">Start</a> › Parks</div>
+      <span class="eyebrow" style="color:#fff">Grünes Köln</span>
+      <h1>Die besten Parks in Köln</h1>
+      <p>Köln ist grüner, als viele denken: Zwei Grüngürtel, weite Rheinwiesen und stimmungsvolle Parks mit Weihern laden zum Verweilen ein.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="intro-copy" style="margin-bottom:30px">
+        <p>Rund um die Innenstadt legen sich zwei ringförmige Grüngürtel – die grüne Lunge der Stadt. Dazu kommen der prächtige Rheinpark, der beliebte Volksgarten mit Biergarten und viele ruhige Nachbarschaftsparks. Filtere nach Picknick, Sport oder Wassernähe und finde den Park, der zu deinem Tag passt.</p>
+      </div>
+      <div id="list"></div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pages.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      PAGES.listPage({
+        mount: "list",
+        categories: ["park"],
+        extraFilters: [{
+          key: "feature", label: "Eignung",
+          options: [
+            { value: "picnic", label: "🧺 Picknick" },
+            { value: "walk", label: "🚶 Spaziergang" },
+            { value: "sport", label: "🏃 Sport" },
+            { value: "water", label: "💧 Wasser/Rhein" }
+          ],
+          test: function (p, v) { return p.meta && p.meta[v]; }
+        }]
+      });
+    });
+  </script>
+</body>
+</html>

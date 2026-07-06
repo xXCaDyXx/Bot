@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ort – KölnGuide</title>
+  <meta name="description" content="Detailseite zu einem Ort in Köln – mit Beschreibung, Insider-Tipps, Öffnungs- und Preishinweisen, Karte sowie Empfehlungen in der Nähe.">
+  <link rel="preconnect" href="https://commons.wikimedia.org">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="site-header"></div>
+  <main id="detail"></main>
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pages.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      PAGES.detailPage("detail");
+    });
+  </script>
+</body>
+</html>

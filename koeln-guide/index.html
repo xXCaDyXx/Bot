@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KölnGuide – Dein kompletter Köln Reiseführer</title>
+  <meta name="description" content="Der komplette digitale Köln-Reiseführer: echte Sehenswürdigkeiten, Foodspots, Parks, Aktivitäten, entspannte Orte, fertige Tagespläne und eine interaktive Karte. Alles über Köln auf einer Seite.">
+  <link rel="preconnect" href="https://commons.wikimedia.org">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg">
+      <img data-file="Stadtbild Köln (50MP).jpg" data-w="1900" alt="Skyline von Köln mit Dom und Rhein bei Sonnenuntergang">
+    </div>
+    <div class="container hero__inner">
+      <span class="hero__badge">📍 Köln · Rheinland · Deutschland</span>
+      <h1>Dein kompletter Köln&nbsp;Guide</h1>
+      <p class="hero__lead">Sehenswürdigkeiten, Foodspots, Parks, Aktivitäten und die entspanntesten Orte am Rhein – recherchiert, ehrlich und alles auf einer Website. Egal ob Tagesbesuch, Wochenende oder Feierabend.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="touren.html">🗓️ Tour planen</a>
+        <a class="btn btn--light" href="karte.html">🗺️ Orte auf Karte ansehen</a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat"><b id="stat-places">–</b><span>echte Orte</span></div>
+        <div class="stat"><b>5</b><span>fertige Touren</span></div>
+        <div class="stat"><b>1</b><span>interaktive Karte</span></div>
+        <div class="stat"><b>∞</b><span>Kölsch 🍺</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KATEGORIEN -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <span class="eyebrow">Schnell entdecken</span>
+        <h2>Wonach ist dir heute?</h2>
+        <p>Wähle eine Kategorie und tauch direkt ein – von Wahrzeichen über Streetfood bis zu ruhigen Plätzen am Wasser.</p>
+      </div>
+      <div class="cat-grid" id="home-cats"></div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Must-see</span>
+        <h2>Top Highlights in Köln</h2>
+        <p>Diese Orte solltest du bei keinem Köln-Besuch verpassen.</p>
+      </div>
+      <div class="highlight-row" id="home-highlights"></div>
+    </div>
+  </section>
+
+  <!-- PERFEKTER TAG -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Stundenplan</span>
+        <h2>Ein perfekter Tag in Köln</h2>
+        <p>So sieht ein rundum gelungener erster Tag aus – vom Dom bis zum Sonnenuntergang am Rhein.</p>
+      </div>
+      <div id="home-perfectday" style="max-width:720px"></div>
+      <div class="mt-40"><a class="btn btn--primary" href="touren.html">Alle Touren ansehen →</a></div>
+    </div>
+  </section>
+
+  <!-- NACH STIMMUNG -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <span class="eyebrow">Nach Gefühl</span>
+        <h2>Köln nach Stimmung entdecken</h2>
+        <p>Ob romantisch, aktiv, verregnet oder mit Freunden – für jede Laune der passende Ort.</p>
+      </div>
+      <div class="mood-grid" id="home-moods"></div>
+    </div>
+  </section>
+
+  <!-- TEASER FOODSPOTS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Hunger?</span>
+        <h2>Beliebte Foodspots</h2>
+        <p>Vom Kult-Brauhaus bis zum veganen Burger – ein kleiner Vorgeschmack.</p>
+      </div>
+      <div class="grid grid--3" id="home-food"></div>
+      <div class="mt-40"><a class="btn btn--ghost" href="foodspots.html">Alle Foodspots →</a></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner">
+        <h2>Bereit, Köln zu erleben?</h2>
+        <p>Plane deine Route mit fertigen Tagesplänen oder finde alle Orte auf der interaktiven Karte. Speichere deine Favoriten mit einem Klick.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="touren.html">🗓️ Tour planen</a>
+          <a class="btn btn--light" href="karte.html">🗺️ Karte öffnen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pages.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      PAGES.homeCategories("home-cats");
+      PAGES.homeHighlights("home-highlights");
+      PAGES.homePerfectDay("home-perfectday");
+      PAGES.homeMoods("home-moods");
+      PAGES.homeTeaser("home-food", ["frueh-am-dom", "bunte-burger", "cafe-reichard"]);
+      document.getElementById("stat-places").textContent = KOELN.places.length + "+";
+      APP.observeNew(document);
+    });
+  </script>
+</body>
+</html>

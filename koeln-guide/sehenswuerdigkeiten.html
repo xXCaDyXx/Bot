@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sehenswürdigkeiten in Köln – KölnGuide</title>
+  <meta name="description" content="Die wichtigsten Sehenswürdigkeiten in Köln: Kölner Dom, Hohenzollernbrücke, Rheinauhafen, Altstadt, KölnTriangle, Ehrenfeld Street Art und mehr – mit Adressen, Tipps und Karte.">
+  <link rel="preconnect" href="https://commons.wikimedia.org">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="page-hero__bg"><img data-file="Der Kölner Dom von Süden - panoramio.jpg" alt="Kölner Dom von Süden"></div>
+    <div class="container page-hero__inner">
+      <div class="breadcrumb"><a href="index.html">Start</a> › Sehenswürdigkeiten</div>
+      <span class="eyebrow" style="color:#fff">Must-see</span>
+      <h1>Sehenswürdigkeiten in Köln</h1>
+      <p>Vom gotischen Dom bis zur modernen Hafenarchitektur: die Orte, die Köln ausmachen – mit echten Adressen, Besuchszeiten und Foto-Tipps.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="intro-copy" style="margin-bottom:34px">
+        <p>Köln trägt seine Geschichte offen zur Schau – und mischt sie ungeniert mit Moderne. Zwischen dem 2000 Jahre alten römischen Erbe, der gotischen Kathedrale und den spiegelnden Kranhäusern liegen oft nur ein paar Gehminuten. Die meisten Highlights liegen entlang des Rheins und lassen sich bequem zu Fuß verbinden.</p>
+      </div>
+      <div id="list"></div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pages.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      PAGES.listPage({ mount: "list", categories: ["sehenswuerdigkeit"], chipField: "subCategory" });
+    });
+  </script>
+</body>
+</html>

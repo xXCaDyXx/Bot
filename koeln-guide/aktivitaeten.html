@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aktivitäten in Köln – Was tun? | KölnGuide</title>
+  <meta name="description" content="Aktivitäten in Köln für jedes Wetter: Seilbahn, Bootstour, Zoo, Museen, Claudius Therme, Street-Art-Tour, Shopping und saisonale Highlights wie Weihnachtsmärkte und Karneval.">
+  <link rel="preconnect" href="https://commons.wikimedia.org">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="page-hero__bg"><img data-file="Rheinseilbahn-Köln-Station-Deutz.JPG" alt="Kölner Seilbahn über dem Rhein"></div>
+    <div class="container page-hero__inner">
+      <div class="breadcrumb"><a href="index.html">Start</a> › Aktivitäten</div>
+      <span class="eyebrow" style="color:#fff">Erleben</span>
+      <h1>Aktivitäten in Köln</h1>
+      <p>Ob bei Sonne oder Regen, mit Familie, Freunden oder zu zweit – so füllst du deinen Tag in Köln mit Erlebnissen.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="intro-copy" style="margin-bottom:30px">
+        <p>Köln lässt sich aktiv erleben: eine Runde mit dem Rad am Rhein, über den Fluss schweben mit der Seilbahn, Kunst und Schokolade an Regentagen oder ein entspanntes Bad in der Claudius Therme. Nutze die Filter, um nach Wetter (Indoor/Outdoor) und Anlass zu sortieren.</p>
+      </div>
+      <div id="list"></div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pages.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      PAGES.listPage({
+        mount: "list",
+        categories: ["aktivitaet"],
+        chipField: "subCategory",
+        extraFilters: [{
+          key: "weather", label: "Wetter",
+          options: [
+            { value: "indoor", label: "🏠 Indoor" },
+            { value: "outdoor", label: "☀️ Outdoor" },
+            { value: "beides", label: "🔄 Beides" }
+          ],
+          test: function (p, v) { return p.weather === v; }
+        }]
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodspots in Köln – Brauhäuser, Cafés & Streetfood | KölnGuide</title>
+  <meta name="description" content="Die besten Foodspots in Köln: Brauhäuser & Kölsch (Früh, Päffgen, Lommerzheim), Cafés, Brunch, Streetfood, vegane Burger und Eisdielen – mit Preisklasse, Stadtteil und Maps-Link.">
+  <link rel="preconnect" href="https://commons.wikimedia.org">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="page-hero__bg"><img data-file="Bierkranz Zunft-Kölsch.jpg" alt="Kölsch im Kranz serviert – typisch Köln"></div>
+    <div class="container page-hero__inner">
+      <div class="breadcrumb"><a href="index.html">Start</a> › Foodspots</div>
+      <span class="eyebrow" style="color:#fff">Essen & Trinken</span>
+      <h1>Foodspots in Köln</h1>
+      <p>Vom traditionellen Brauhaus mit Kölsch und Halver Hahn bis zum veganen Burger in Ehrenfeld – hier isst und trinkt Köln.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="intro-copy" style="margin-bottom:34px">
+        <p>Kölns Küche ist bodenständig und ehrlich – und längst viel mehr als Brauhaus. In der Altstadt gehört ein frisch gezapftes Kölsch zum Pflichtprogramm, während in Ehrenfeld und im Belgischen Viertel eine junge, internationale Foodszene wächst. Ein Tipp vorab: Öffnungszeiten variieren stark – bitte vor dem Besuch aktuell prüfen.</p>
+      </div>
+      <div id="list"></div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pages.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      PAGES.listPage({ mount: "list", categories: ["food"], chipField: "subCategory" });
+    });
+  </script>
+</body>
+</html>

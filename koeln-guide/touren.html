@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tagespläne & Touren durch Köln | KölnGuide</title>
+  <meta name="description" content="Fertige Köln-Touren für jeden Typ: Klassiker an einem Tag, Food & Kölsch, entspanntes Köln, junges Köln mit Freunden und die Regenwetter-Tour – mit Uhrzeiten und Google-Maps-Route.">
+  <link rel="preconnect" href="https://commons.wikimedia.org">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="page-hero__bg"><img data-file="Kölner Dom vom KölnTriangle.jpg" alt="Blick auf den Kölner Dom vom KölnTriangle"></div>
+    <div class="container page-hero__inner">
+      <div class="breadcrumb"><a href="index.html">Start</a> › Touren</div>
+      <span class="eyebrow" style="color:#fff">Fertig geplant</span>
+      <h1>Tagespläne & Touren</h1>
+      <p>Fünf durchdachte Routen für unterschiedliche Stimmungen – mit Uhrzeiten, Stationen und Route zum direkt Loslaufen.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="intro-copy" style="margin-bottom:34px">
+        <p>Keine Lust zu planen? Diese Touren nehmen dir die Arbeit ab. Jede Route ist so gebaut, dass die Wege kurz und die Highlights groß sind. Die Zeiten sind Richtwerte – nimm sie als Gerüst und bau nach Lust und Laune um. Über den Button öffnest du die komplette Route direkt in Google Maps.</p>
+      </div>
+      <div id="tours"></div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pages.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      PAGES.toursPage("tours");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entspannte Orte in Köln – Chill-Spots am Rhein | KölnGuide</title>
+  <meta name="description" content="Die entspanntesten Orte in Köln: Rheinboulevard, Aachener Weiher, Brüsseler Platz, Poller Wiesen, Rodenkirchener Riviera und mehr – perfekt für Sonnenuntergang, Picknick und Date.">
+  <link rel="preconnect" href="https://commons.wikimedia.org">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="page-hero__bg"><img data-file="Köln Rhein (51733383229).jpg" alt="Entspannen am Rhein in Köln"></div>
+    <div class="container page-hero__inner">
+      <div class="breadcrumb"><a href="index.html">Start</a> › Entspannte Orte</div>
+      <span class="eyebrow" style="color:#fff">Durchatmen</span>
+      <h1>Entspannte Locations</h1>
+      <p>Ruhige Ufer, laue Plätze und grüne Ecken zum Runterkommen – die schönsten Orte, um Köln ganz langsam zu genießen.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="intro-copy" style="margin-bottom:34px">
+        <p>Zwischen all den Sehenswürdigkeiten braucht es auch Momente zum Durchatmen. Köln liefert sie am Wasser: auf den Stufen des Rheinboulevards, in der Wiese am Aachener Weiher oder mit den Füßen im Sand an der Rodenkirchener Riviera. Getränk mitbringen, hinsetzen, Sonnenuntergang genießen – so geht Feierabend auf Kölsch.</p>
+      </div>
+      <div id="list"></div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pages.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      PAGES.listPage({
+        mount: "list",
+        categories: ["entspannt"],
+        chipField: "subCategory",
+        extraFilters: [{
+          key: "goodfor", label: "Geeignet für",
+          options: [
+            { value: "Date", label: "💕 Date" },
+            { value: "Picknick", label: "🧺 Picknick" },
+            { value: "Sonnenuntergang", label: "🌅 Sonnenuntergang" },
+            { value: "Spaziergang", label: "🚶 Spaziergang" },
+            { value: "Lesen", label: "📖 Lesen" },
+            { value: "Freunde", label: "👥 Freunde" }
+          ],
+          test: function (p, v) { return (p.goodFor || []).indexOf(v) !== -1; }
+        }]
+      });
+    });
+  </script>
+</body>
+</html>
